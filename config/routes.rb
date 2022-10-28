@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'card#index'
   namespace :admin do
       resources :substreams
       resources :students

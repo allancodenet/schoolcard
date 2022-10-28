@@ -57,14 +57,14 @@ class StudentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    stream
+    substream
+    photo
     adm_no
     dob
     index_no
     kcpe_yr
     other_names
-    photo
-    stream
-    substream
     surname
     upi
   ].freeze
