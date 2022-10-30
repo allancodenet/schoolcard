@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :substreams
       resources :students
       resources :streams
+      resources :school_details
 
       root to: "substreams#index"
     end

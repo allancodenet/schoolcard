@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class StudentDashboard < Administrate::BaseDashboard
+class SchoolDetailDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,16 +9,9 @@ class StudentDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    adm_no: Field::String,
-    dob: Field::Date,
-    index_no: Field::Number,
-    kcpe_yr: Field::Number,
-    other_names: Field::String,
-    photo: Field::ActiveStorage,
-    stream: Field::BelongsTo,
-    substream: Field::BelongsTo,
-    surname: Field::String,
-    upi: Field::String,
+    address: Field::String,
+    logo: Field::ActiveStorage,
+    name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -29,26 +22,18 @@ class StudentDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    photo
-    adm_no
-    surname
-    index_no
+    id
+    address
+    logo
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    adm_no
-    dob
-    index_no
-    kcpe_yr
-    other_names
-    photo
-    stream
-    substream
-    surname
-    upi
+    address
+    logo
+    name
     created_at
     updated_at
   ].freeze
@@ -57,16 +42,9 @@ class StudentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    stream
-    substream
-    photo
-    adm_no
-    dob
-    index_no
-    kcpe_yr
-    other_names
-    surname
-    upi
+    address
+    logo
+    name
   ].freeze
 
   # COLLECTION_FILTERS
@@ -81,10 +59,10 @@ class StudentDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how students are displayed
+  # Overwrite this method to customize how school details are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(student)
-    "Student ##{student.surname}"
+  def display_resource(school_detail)
+    "SchoolDetail ##{school_detail.name}"
   end
 end

@@ -1,7 +1,66 @@
+
+<div class="p-6 max-w-sm bg-amber-400 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+<% @students.each do |s| %>
+ <p>school details</p>
+ <h1 class= "text-red-500">Student Identification Card</h1>
+ <div class= "md:flex">
+  <div >
+  <%= link_to image_tag(s.photo_resize ,class: "rounded-full"), s.photo %>
+  </div>
+
 <div>
-  <h1 class="font-bold text-4xl">Card#index</h1>
-  <% @students.each do |s| %>
-  <%= link_to image_tag(s.photo_resize), s.photo %>
-  <%end%>
+<h1>Name: <%= s.surname%></h1>
+<h1> ADM: <%= s.adm_no%></h1>
+<h1> UPI: <%= s.upi%></h1>
+<h1>INDEX: <%= s.index_no%></h1>
+<h1>KCPE YR: <%= s.kcpe_yr%></h1>
+<h1>DOB: <%= s.dob%></h1>
+</div>
+
+<div>
+</div>
+STREAM: <%= s.stream.name%>
+SUBSTREAM: <%= s.substream.name%>
+</div>
+   <%end%>
+</div>
+
+<div class="w-96 h-56 m-auto rounded-xl relative text-white shadow-2xl transition-transform transform hover:scale-110">
+  <div class="relative object-cover w-full h-full rounded-xl bg-gradient-to-r from-teal-400 to-blue-400" ></div>
+  <div class="w-full px-8 absolute top-8">
+    <div class="flex justify-between">
+      <div>
+        <span class="font-light">Name</span>
+        <p  class="font-medium tracking-widest">
+          Jenny Rosen
+        </p>
+      </div>
+    </div>
+
+    <div class="pt-4">
+      <span class="font-light">Card Number</span>
+      <p data-card-target="number" class="font-medium tracking-widest">
+        **** **** **** ****
+      </p>
+    </div>
+
+    <div class="pt-4 pr-6">
+      <div class="flex justify-between">
+        <div>
+          <span class="font-light text-xs">Expiry</span>
+          <p data-card-target="expiry" class="font-medium tracking-wider text-sm">
+          ** / **
+          </p>
+        </div>
+
+        <div>
+          <span class="font-light text-xs"> CVV </span>
+          <p data-card-target="cvc" class="font-bold tracking-more-wider text-sm">
+          ***
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
