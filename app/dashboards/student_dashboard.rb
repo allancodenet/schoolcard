@@ -10,6 +10,7 @@ class StudentDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     adm_no: Field::String,
+    gender: Field::Select.with_options(collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
     dob: Field::Date,
     index_no: Field::Number,
     kcpe_yr: Field::Number,
@@ -61,6 +62,7 @@ class StudentDashboard < Administrate::BaseDashboard
     substream
     photo
     adm_no
+    gender
     dob
     index_no
     kcpe_yr
@@ -85,6 +87,6 @@ class StudentDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(student)
-    "Student ##{student.surname}"
+    "Student ##{student.name}"
   end
 end
