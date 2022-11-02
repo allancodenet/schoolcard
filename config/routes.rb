@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'card#index'
+  devise_for :users
+  root 'home#index'
+  get 'card/index'
   namespace :admin do
       resources :substreams
       resources :students
