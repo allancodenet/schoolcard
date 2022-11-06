@@ -1,0 +1,120 @@
+<style>
+
+.card {
+  
+  background-color: teal;
+  width: 412.5px;
+  height: 250px;
+  margin: 1rem;
+  
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0,0,0, 0.5);
+}
+
+.title {
+
+  
+}
+
+.title h1{
+font-weight: bold;
+text-align: center;
+text-transform: uppercase;
+  /* background-color: teal; */
+
+}
+
+.student-data h1 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.school-details{
+height:50px;
+border-bottom: 1px solid red;
+
+}
+
+.card-middle{
+display:flex;
+margin: 2px;
+height:150px;
+border-bottom: 1px solid red;
+}
+.student-data{
+margin-left: 10px;
+}
+.card-img{
+  border-radius: 10px;
+  height: auto;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <% @students.each do |s| %>
+<div class="card">
+        <div class="school-details">
+        </div>
+  <div class="">
+  <div class="" >
+            <div class="title">
+            <h1>Student Identification Card</h1>
+            </div>
+          <div id="" class="card-middle">  
+              <div class="imgdiv">
+                  <%= link_to image_tag(s.photo_resize ,class:"card-img"), s.photo %>
+               </div> 
+              <div id= "" class= "student-data">
+                <h1>Name:<%= s.name%></h1>
+                <h1>Adm:<%= s.adm_no%></h1>
+                <h1>UPI:<%= s.upi%></h1>
+                <h1>Index:<%= s.index_no%></h1>
+                <h1>Kcpe Yr:<%= s.kcpe_yr%></h1>
+                <h1>Dob:<%= s.dob%></h1>
+                <h1>Gender:<%= s.gender%></h1>
+                <h1>Class:<%= s.stream.name%>  <%= s.substream.name%> </h1>
+              </div>
+              
+          </div>
+            
+ </div>
+</div>
+</div>
+<%end%>
