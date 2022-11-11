@@ -1,0 +1,8 @@
+<%= form_with model: @student do |form| %>
+   <%= select_tag :stream, options_from_collection_for_select(Stream.all, "id", "name"), prompt: "- Please select -" %>
+   <%= select_tag :substream, options_from_collection_for_select(Substream.all, "id", "name"), prompt: "- Please select -" %>
+   <%= select_tag :student, options_from_collection_for_select(Student.all, "id", "name"), prompt: "- Please select -" %>
+<div >
+    <%= form.submit  %>
+  </div>
+<% end %>

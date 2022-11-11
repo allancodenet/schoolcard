@@ -5,5 +5,10 @@ class CardsController < Admin::ApplicationController
     @students =Student.all
     @school=SchoolDetail.find_by_id(1)
   end
+
+
+
+
+
 end
 end
