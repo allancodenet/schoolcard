@@ -64,6 +64,6 @@ class StreamDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(stream)
-     "Stream ##{stream.name}"
+     "#{stream.name}"
    end
 end

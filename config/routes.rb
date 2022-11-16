@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
       resources :substreams
       resources :students
-      resources :streams
+      resources :streams 
       resources :school_details
       resources :cards
       root to: "cards#index"

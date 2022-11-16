@@ -19,7 +19,7 @@ module Admin
     # The result of this lookup will be available as `requested_resource`
 
     # Override this if you have certain roles that require a subset
-    # this will be used to set the records shown on the `index` action.
+    # this will be used to set n the records shown on the `index` action.
     #
     # def scoped_resource
     #   if current_user.super_admin?

@@ -2,8 +2,8 @@ class Student < ApplicationRecord
   belongs_to :stream
   belongs_to :substream
   has_one_attached :photo
-
-  validates_presence_of :surname, :other_names
+  validates_associated :stream, :substream
+  validates_presence_of :surname, :other_names, :gender
 
   def photo_resize
     photo.variant(resize_to_limit:[100,00]).processed
@@ -13,6 +13,9 @@ class Student < ApplicationRecord
     "#{surname}  #{other_names}"
   end
 
-  enum gender:{Male:'Male', Female:'Female'}
+def level
+    "#{stream.name}  #{substream.name}"
+  end
+  enum gender:{Male:'Male', Female:'Female'} 
   
 end

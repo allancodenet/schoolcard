@@ -61,6 +61,6 @@ class SubstreamDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(substream)
-    "Substream ##{substream.name}"
+    "#{substream.name}"
   end
 end

@@ -20,4 +20,5 @@ $(function() {
 
   $("table").on("click", ".js-table-row", visitDataUrl);
   $("table").on("keydown", ".js-table-row", visitDataUrl);
+  
 });
