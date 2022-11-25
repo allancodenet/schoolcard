@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class SchoolDetailDashboard < Administrate::BaseDashboard
+class SchoolDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -12,6 +12,7 @@ class SchoolDetailDashboard < Administrate::BaseDashboard
     address: Field::String,
     logo: Field::ActiveStorage,
     name: Field::String,
+    students: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -23,7 +24,8 @@ class SchoolDetailDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    name
+    address
+    logo
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -33,6 +35,7 @@ class SchoolDetailDashboard < Administrate::BaseDashboard
     address
     logo
     name
+    students
     created_at
     updated_at
   ].freeze
@@ -41,9 +44,9 @@ class SchoolDetailDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    name
     address
     logo
-    name
   ].freeze
 
   # COLLECTION_FILTERS
@@ -58,10 +61,10 @@ class SchoolDetailDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how school details are displayed
+  # Overwrite this method to customize how schools are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(school_detail)
-    "SchoolDetail ##{school_detail.name}"
+  def display_resource(school)
+    "#{school.name}"
   end
 end

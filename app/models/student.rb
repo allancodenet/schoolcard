@@ -1,4 +1,5 @@
 class Student < ApplicationRecord
+  belongs_to :school
   belongs_to :stream
   belongs_to :substream
   has_one_attached :photo

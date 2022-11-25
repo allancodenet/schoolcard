@@ -10,7 +10,7 @@ class StudentDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     adm_no: Field::String,
-    gender: Field::Select.with_options(collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
+    gender: Field::Select.with_options( include_blank:true, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
     dob: Field::Date,
     index_no: Field::Number,
     kcpe_yr: Field::Number,
@@ -18,6 +18,7 @@ class StudentDashboard < Administrate::BaseDashboard
     photo: Field::ActiveStorage,
     stream: Field::BelongsTo,
     substream: Field::BelongsTo,
+    school: Field::BelongsTo,
     surname: Field::String,
     upi: Field::String,
     created_at: Field::DateTime,
@@ -58,6 +59,7 @@ class StudentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    school
     stream
     substream
     photo

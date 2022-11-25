@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_02_204416) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_25_144922) do
+
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -51,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_204416) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "school_details", force: :cascade do |t|
+  create_table "schools", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.datetime "created_at", null: false
@@ -77,6 +79,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_204416) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "gender"
+    t.integer "school_id"
+    t.index ["school_id"], name: "index_students_on_school_id"
     t.index ["stream_id"], name: "index_students_on_stream_id"
     t.index ["substream_id"], name: "index_students_on_substream_id"
   end
@@ -103,6 +107,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_204416) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "students", "schools"
   add_foreign_key "students", "streams"
   add_foreign_key "students", "substreams"
   add_foreign_key "substreams", "streams"

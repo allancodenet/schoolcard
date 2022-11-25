@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :substreams
       resources :students
       resources :streams 
-      resources :school_details
+      resources :schools
       resources :cards
       root to: "cards#index"
     end
