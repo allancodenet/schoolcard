@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :students
       resources :streams 
       resources :schools
-      resources :cards
+      resources :cards, only: [:index]
       root to: "cards#index"
     end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

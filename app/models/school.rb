@@ -5,6 +5,6 @@ class School < ApplicationRecord
 
 
     def logo_resize
-        logo.variant(resize_to_limit:[100,00]).processed
+        logo.variant(resize_to_limit:[50,50]).processed
       end
 end

@@ -35,7 +35,7 @@ text-transform: uppercase;
 .school-details{
 height:50px;
 border-bottom: 1px solid red;
-
+display: flex;
 }
 
 .card-middle{
@@ -50,6 +50,10 @@ margin-left: 10px;
 .card-img{
   border-radius: 10px;
   height: auto;
+
+} 
+ .logodiv{
+  flex: none;
 }
 
 </style>
@@ -80,12 +84,20 @@ margin-left: 10px;
 
 
 
-
+<%= render "form"%>
 
   <% @students.each do |s| %>
 <div class="card">
-        <div class="school-details">
+   <div class="school-details">
+        <div class="logodiv">
+           <%= link_to image_tag(s.school.logo_resize), s.school.logo %>
         </div>
+       <div> <%= s.school.name%> </div>
+       <div>
+        P.O BOX <%= s.school.address%>
+       </div>
+      
+    </div>
   <div class="">
   <div class="" >
             <div class="title">
