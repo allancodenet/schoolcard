@@ -1,0 +1,100 @@
+.addons{
+  margin: 1rem;
+  
+ 
+}
+
+
+
+@media screen, print {
+  .cardprint{
+ display:flex;
+ flex-shrink: none;
+
+  }
+
+    .card {
+      
+      background-color: teal  !important;
+      -webkit-print-color-adjust: exact;
+      width: 412.5px;
+      height: 250px;
+      margin: 1rem;
+      
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(0,0,0, 0.5);
+    }
+    
+   
+    
+    .title h1{
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+      /* background-color: teal; */
+    
+    }
+    
+    .student-data h1 {
+      font-size: 0.7rem;
+      letter-spacing:2px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    
+    .school-details{
+    height:50px;
+    border-bottom: 1px solid red;
+    display: flex;
+    }
+    
+    .card-middle{
+    display:flex;
+    margin: 2px;
+    height:150px;
+    border-bottom: 1px solid red;
+    }
+    .student-data{
+    margin-left: 10px;
+    }
+    .card-img{
+      border-radius: 10px;
+      height: auto;
+    
+    } 
+     .logodiv{
+      flex: none;
+    }
+    }
+
+
+    @media print{
+      @page { 
+        margin: 0;
+        size:A4;
+      
+      } 
+  /* .print, .print *{
+    visibility: visible;
+    
+  } */
+  .print{
+      /* border-radius: none !important;
+      box-shadow: none; */
+      visibility: visible;
+      position:  absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+    
+
+      
+    }
+
+
+  .no-print{visibility: hidden;}
+  .hide{display: none;}
+
+    }

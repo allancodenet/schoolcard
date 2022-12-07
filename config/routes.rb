@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   root 'home#index'
   namespace :admin do
       resources :substreams
-      resources :students
+      resources :students do
+        collection do
+          post :import
+        end
+      end
       resources :streams 
       resources :schools
       resources :cards, only: [:index]

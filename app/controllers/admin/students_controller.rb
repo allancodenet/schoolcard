@@ -8,6 +8,14 @@ module Admin
     #   super
     #   send_foo_updated_email(requested_resource)
     # end
+    def import
+      file = params[:file]
+      return redirect_to admin_students_path, notice: 'Only CSV please' unless file.content_type == 'text/csv'
+  
+      CsvImportStudentsService.new.call(file)
+  
+      redirect_to admin_students_path, notice: 'Users imported!'
+    end
 
     # Override this method to specify custom lookup behavior.
     # This will be used to set the resource for the `show`, `edit`, and `update`

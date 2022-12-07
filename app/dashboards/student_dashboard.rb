@@ -91,4 +91,5 @@ class StudentDashboard < Administrate::BaseDashboard
   def display_resource(student)
     "#{student.name}"
   end
+  
 end

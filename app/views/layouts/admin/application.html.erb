@@ -24,17 +24,16 @@ By default, it renders:
   <%= render "stylesheet" %>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag if defined?(csp_meta_tag) %>
-  <%# <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %> 
+  <%= stylesheet_link_tag "card", "inter-font", "data-turbo-track": "reload" %> 
 </head>
-<body>
-
+<body class ="no-print">
   <%= render "icons" %>
   <%= render "nav" %>
 
   <div class="app-container">
     <%= render "navigation" -%>
 
-    <main class="main-content" role="main">
+    <main class="main-content print" role="main">
       <%= render "flashes" -%>
       <%= yield %>
     </main>

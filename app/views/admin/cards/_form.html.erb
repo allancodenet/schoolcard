@@ -1,11 +1,11 @@
 
-<%= form_with url: admin_root_path ,method: :get do |form| %>
+<%= form_with url: admin_root_path ,method: :get, class: "hide addons" do |form| %>
 <%= form.label :stream %>
    <%= select_tag :stream, options_from_collection_for_select(Stream.all, "id", "name"), prompt: "- Please select -" %> 
  <%# <%= form.label :substream %>
    <%# <%= select_tag :substream, options_from_collection_for_select(Substream.all, "id", "name"), prompt: "- Please select -" %> 
    <%# <%= select_tag :student, options_from_collection_for_select(Student.all, "id", "name"), prompt: "- Please select -" %>
-<div >
+<div  >
     <%= form.submit  "Generate card" %>
   </div>
 <% end %>
