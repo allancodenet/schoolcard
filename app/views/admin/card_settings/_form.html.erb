@@ -1,0 +1,37 @@
+<form class="form" id="new_card_setting" action="/admin/card_settings" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="z9DDZkVElQlD8Z0W3HmEFThhOlVVcxiorAYnBV_JkTDlvp-kPUf7hvzbbRXT3YsLeW_y17UpEnhZBXO3h-Q36Q" autocomplete="off">
+
+    <div class="field-unit field-unit--string field-unit--optional">
+      
+<div class="field-unit__label">
+  <label for="card_setting_bg_color">Bg color</label>
+</div>
+<div class="field-unit__field">
+  <input type="color" value="#008080" name="card_setting[bg_color]" id="card_setting_bg_color">
+</div>
+
+    </div>
+    <div class="field-unit field-unit--string field-unit--optional">
+      
+<div class="field-unit__label">
+  <label for="card_setting_txt_color">Txt color</label>
+</div>
+<div class="field-unit__field">
+  <input type="color" value="#212121" name="card_setting[txt_color]" id="card_setting_txt_color">
+</div>
+
+    </div>
+    
+    <div class="field-unit field-unit--belongs-to field-unit--required " style ="display:none"  >
+      
+<div class="field-unit__label "  >
+  <label for="card_setting_user_id">User</label>
+</div>
+<div class="field-unit__field">
+<input  value="<%=current_user.id%>" name="card_setting[user_id]" id="card_setting_user_id">
+</div>
+    </div>
+
+  <div class="form-actions">
+    <input type="submit" name="commit" value="Create Card setting" data-disable-with="Create Card setting">
+  </div>
+</form>

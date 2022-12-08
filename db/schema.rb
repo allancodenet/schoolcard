@@ -10,8 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_25_144922) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_12_08_111033) do
+  create_table "School", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -51,6 +56,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_144922) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "card_settings", force: :cascade do |t|
+    t.string "bg_color", default: "#008080"
+    t.string "txt_color", default: "#212121"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_card_settings_on_user_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -107,6 +121,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_144922) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "card_settings", "users"
   add_foreign_key "students", "schools"
   add_foreign_key "students", "streams"
   add_foreign_key "students", "substreams"

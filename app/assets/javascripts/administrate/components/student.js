@@ -58,11 +58,3 @@ $('#student_gender').selectize({
 
 
 
-// $('#student_substream').selectize({
-//     options:[{
-//         "name": "east"
-//     },],
-//     valueField: 'name',
-//     labelField: 'name',
-//     placeholder: 'Section'
-// });

@@ -1,6 +1,5 @@
 .addons{
   margin: 1rem;
-  
  
 }
 
@@ -8,22 +7,29 @@
 
 @media screen, print {
   .cardprint{
- display:flex;
- flex-shrink: none;
+   display:grid;
+   gap: 0.5rem;
+   grid-template-columns: repeat(2, minmax(0, 1fr)); 
 
   }
 
     .card {
       
-      background-color: teal  !important;
+      background-color: var(--main-color-bg);
+      color: var(--main-color-txt);
       -webkit-print-color-adjust: exact;
-      width: 412.5px;
-      height: 250px;
-      margin: 1rem;
-      
-      border-radius: 10px;
+      min-width: 3.5in;
+      max-width: 3.5in;
+      min-height: 2in;
+      max-height: 2in;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
       overflow: hidden;
       box-shadow: 0 0 5px rgba(0,0,0, 0.5);
+      
     }
     
    
@@ -72,7 +78,7 @@
     @media print{
       @page { 
         margin: 0;
-        size:A4;
+        size: 8.3in 11.7in;
       
       } 
   /* .print, .print *{
@@ -96,5 +102,5 @@
 
   .no-print{visibility: hidden;}
   .hide{display: none;}
-
+  #hide{display: none;}
     }

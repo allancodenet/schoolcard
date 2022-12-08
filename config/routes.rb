@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
   namespace :admin do
       resources :substreams
+      resources :card_settings
       resources :students do
         collection do
           post :import
