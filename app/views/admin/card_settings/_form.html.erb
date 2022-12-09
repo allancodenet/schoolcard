@@ -1,3 +1,5 @@
+
+   <% if current_user %>
 <form class="form" id="new_card_setting" action="/admin/card_settings" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="z9DDZkVElQlD8Z0W3HmEFThhOlVVcxiorAYnBV_JkTDlvp-kPUf7hvzbbRXT3YsLeW_y17UpEnhZBXO3h-Q36Q" autocomplete="off">
 
     <div class="field-unit field-unit--string field-unit--optional">
@@ -35,3 +37,4 @@
     <input type="submit" name="commit" value="Create Card setting" data-disable-with="Create Card setting">
   </div>
 </form>
+ <% end %>

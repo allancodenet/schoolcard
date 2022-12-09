@@ -5,12 +5,11 @@
  <div id="card" class="card ">
    <div class="school-details">
         <div class="logodiv">
-           <%# <%= link_to image_tag(s.school.logo_resize), s.school.logo %> 
+           <%= link_to image_tag(s.school.logo_resize), s.school.logo %> 
         </div>
-       <div> <%= s.school.name%> </div>
-       <div>
-        P.O BOX <%= s.school.address%>
-       </div>
+       <div> <%= s.school.name%>  <br> <%= s.school.address%></div>
+      
+       
       
     </div>
   <div class="">
@@ -20,7 +19,7 @@
             </div>
           <div id="" class="card-middle">  
               <div class="imgdiv">
-                  <%# <%= link_to image_tag(s.photo_resize ,class:"card-img"), s.photo %> 
+               <%=  image_tag( "default.jpg" ,class:"card-img") %> 
                </div> 
               <div id= "" class= "student-data">
                 <h1>Name:<%= s.name%></h1>
@@ -34,12 +33,16 @@
               </div>
               
           </div>
+          
             
   </div>
   </div>
   </div>
   <%end%>
+
 </div>
+  
+
  <br>
  <br>
  <br>

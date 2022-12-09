@@ -53,25 +53,35 @@
     height:50px;
     border-bottom: 1px solid red;
     display: flex;
+ 
+   
     }
+   
     
     .card-middle{
     display:flex;
     margin: 2px;
     height:150px;
     border-bottom: 1px solid red;
+
     }
     .student-data{
     margin-left: 10px;
     }
     .card-img{
       border-radius: 10px;
-      height: auto;
+      height: 100px;
+      width: 100px;
     
     } 
      .logodiv{
       flex: none;
+      margin-right: 10px;
     }
+
+
+
+    
     }
 
 

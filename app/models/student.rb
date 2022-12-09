@@ -9,7 +9,7 @@ class Student < ApplicationRecord
   validates_presence_of :surname, :other_names, :gender
 
   def photo_resize
-    photo.variant(resize_to_limit:[100,00]).processed
+    photo.variant(resize_to_limit:[100,100]).processed
   end
 
   def name
