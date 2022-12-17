@@ -1,50 +1,40 @@
-
 <%= render "form"%>
 <div class= "cardprint">
   <% @students.each do |s| %>
- <div id="card" class="card ">
-   <div class="school-details">
+    <div id="card" class="card ">
+      <div class="school-details">
         <div class="logodiv">
-           <%= link_to image_tag(s.school.logo_resize), s.school.logo %> 
+          <%= link_to image_tag(s.school.logo_resize), s.school.logo %>
         </div>
-       <div> <%= s.school.name%>  <br> <%= s.school.address%></div>
-      
-       
-      
-    </div>
-  <div class="">
-  <div class="" >
-            <div class="title">
+        <div> <%= s.school.name%>  <br>
+          <%= s.school.address%></div>
+      </div>
+      <div class="">
+        <div class="" >
+          <div class="title">
             <h1>Student Identification Card</h1>
-            </div>
-          <div id="" class="card-middle">  
-              <div class="imgdiv">
-               <%=  image_tag( "default.jpg" ,class:"card-img") %> 
-               </div> 
-              <div id= "" class= "student-data">
-                <h1>Name:<%= s.name%></h1>
-                <h1>Adm:<%= s.adm_no%></h1>
-                <h1>UPI:<%= s.upi%></h1>
-                <h1>Index:<%= s.index_no%></h1>
-                <h1>Kcpe Yr:<%= s.kcpe_yr%></h1>
-                <h1>Dob:<%= s.dob%></h1>
-                <h1>Gender:<%= s.gender%></h1>
-                <h1>Class:<%= s.level%> </h1>
-              </div>
-              
           </div>
-          
-            
-  </div>
-  </div>
-  </div>
+          <div id="" class="card-middle">
+            <div class="imgdiv">
+              <%=  image_tag( "default.jpg" ,class:"card-img") %>
+            </div>
+            <div id= "" class= "student-data">
+              <h1>Name:<%= s.name%></h1>
+              <h1>Adm:<%= s.adm_no%></h1>
+              <h1>UPI:<%= s.upi%></h1>
+              <h1>Index:<%= s.index_no%></h1>
+              <h1>Kcpe Yr:<%= s.kcpe_yr%></h1>
+              <h1>Dob:<%= s.dob%></h1>
+              <h1>Gender:<%= s.gender%></h1>
+              <h1>Class:<%= s.level%> </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   <%end%>
-
 </div>
-  
-
- <br>
- <br>
- <br>
-
- <button  class= "addons hide" onclick=window.print()>Print</button>
+<br>
+<br>
+<br>
+<button  class= "addons hide" onclick=window.print()>Print</button>

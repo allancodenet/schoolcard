@@ -1,8 +1,15 @@
-<% if current_user %>
- <style>
-   :root {
-     --main-color-bg: <%= current_user.card_setting.bg_color.nil? ? "#151828" : current_user.card_setting.bg_color %>;
-     --main-color-txt: <%= current_user.card_setting.txt_color.nil? ? "#F4F4F4" : current_user.card_setting.txt_color %>;
- }
- </style>
- <% end %>
+<% if current_user.card_setting.present? %>
+  <style>
+    :root {
+      --main-color-bg: <%=  current_user.card_setting.bg_color %>;
+      --main-color-txt: <%= current_user.card_setting.txt_color %>;
+     }
+  </style>
+<%else%>
+  <style>
+    :root {
+      --main-color-bg: #151828 ;
+      --main-color-txt: #F4F4F4 ;
+     }
+  </style>
+<%end%>

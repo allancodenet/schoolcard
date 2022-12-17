@@ -16,7 +16,7 @@ class Student < ApplicationRecord
     "#{surname}  #{other_names}"
   end
 
-def level
+ def level
     "#{stream.name}  #{substream.name}"
   end
 
