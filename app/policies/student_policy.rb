@@ -4,5 +4,16 @@ class StudentPolicy < ApplicationPolicy
     # def resolve
     #   scope.all
     # end
+    def initialize(user, scope)
+      @user  = user
+      @scope = scope
+    end
+    def resolve
+      scope.all
+    end
+
+    def resolve_admin
+      scope.where(user_id: user.id)
+    end
   end
 end

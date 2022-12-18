@@ -1,7 +1,7 @@
 <%= form_with url: admin_root_path ,method: :get, class: "addons hide" do |form| %>
   <%= form.label :stream %>
-  <%= select_tag :stream, options_from_collection_for_select(Stream.all, "id", "name"), prompt: "- Please select -" %>
+  <%= select_tag :stream, options_from_collection_for_select(@streams, "id", "name"), prompt: "- Please select -" %>
   <div >
     <%= form.submit  "Generate card" %>
   </div>
-<% end %> 
+<% end %>

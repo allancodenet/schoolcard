@@ -11,38 +11,32 @@ By default, it renders:
 - Flashes
 - Links to stylesheets and JavaScripts
 %>
-
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
-<head>
-  <meta charset="utf-8">
-  <meta name="ROBOTS" content="NOODP">
-  <meta name="viewport" content="initial-scale=1">
-  <title>
-    <%= content_for(:title) %> - <%= application_title %>
-  </title>
-  <%= render "stylesheet" %>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag if defined?(csp_meta_tag) %>
-  <%= stylesheet_link_tag "card", "inter-font", "data-turbo-track": "reload" %> 
-</head>
-<body class ="no-print">
-
-
- 
-  <%= render "icons" %>
-  <%= render "colors" %>
-  <%= render "nav" %>
-
-  <div class="app-container">
-    <%= render "navigation" -%>
-
-    <main class="main-content print" role="main">
-      <%= render "flashes" -%>
-      <%= yield %>
-    </main>
-  </div>
-
-  <%= render "javascript" %>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="ROBOTS" content="NOODP">
+    <meta name="viewport" content="initial-scale=1">
+    <title>
+      <%= content_for(:title) %> - <%= application_title %>
+    </title>
+    <%= render "stylesheet" %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag if defined?(csp_meta_tag) %>
+    <%= stylesheet_link_tag "card", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "nav", "inter-font", "data-turbo-track": "reload" %>
+  </head>
+  <body class ="no-print">
+    <%= render "icons" %>
+    <%= render "colors" %>
+    <%= render "nav" %>
+    <div class="app-container">
+      <%= render "navigation" -%>
+      <main class="main-content print" role="main">
+        <%= render "flashes" -%>
+        <%= yield %>
+      </main>
+    </div>
+    <%= render "javascript" %>
+  </body>
 </html>

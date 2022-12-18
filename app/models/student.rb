@@ -1,6 +1,6 @@
 class Student < ApplicationRecord
   before_create :add_default_photo
-
+  
   belongs_to :school
   belongs_to :stream
   belongs_to :substream

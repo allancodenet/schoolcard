@@ -22,7 +22,7 @@ It renders the `_table` partial to display details about the resources.
 
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Collection
 %>
-
+<div style ="color:teal ">Add School then Streams then Substreams then Students </div>
 <%=
   render("index_header",
     resources: resources,
@@ -31,7 +31,6 @@ It renders the `_table` partial to display details about the resources.
     show_search_bar: show_search_bar,
   )
 %>
-
 <section class="main-content__body main-content__body--flush">
   <%= render(
     "collection",
@@ -41,6 +40,5 @@ It renders the `_table` partial to display details about the resources.
     resources: resources,
     table_title: "page-title"
   ) %>
-
   <%= render("pagination", resources: resources) %>
 </section>

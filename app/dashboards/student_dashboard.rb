@@ -32,7 +32,6 @@ class StudentDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     photo
-    adm_no
     surname
     index_no
   ].freeze
