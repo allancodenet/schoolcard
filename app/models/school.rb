@@ -2,6 +2,8 @@ class School < ApplicationRecord
   validate :only_one
   has_many :students
   has_one_attached :logo
+
+  validates_presence_of :name
  
 
 
