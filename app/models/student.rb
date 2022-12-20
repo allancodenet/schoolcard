@@ -1,6 +1,5 @@
 class Student < ApplicationRecord
   before_create :add_default_photo
-  
   belongs_to :school
   belongs_to :stream
   belongs_to :substream
@@ -13,7 +12,7 @@ class Student < ApplicationRecord
   end
 
   def name
-    "#{surname}  #{other_names}"
+    "#{surname} #{other_names}"
   end
 
  def level

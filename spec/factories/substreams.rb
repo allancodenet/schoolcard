@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :substream do
-    name { "MyString" }
-    stream { nil }
+    name { "eee" }
+    stream 
   end
 end
