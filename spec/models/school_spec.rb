@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe School, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+it { should have_many (:students) }
+it { should have_one_attached (:logo) }
+
 end
