@@ -25,7 +25,7 @@ class SchoolDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     address
-    logo
+    name
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

@@ -4,7 +4,7 @@
     <div id="card" class="card ">
       <div class="school-details">
         <div class="logodiv">
-          <%= link_to image_tag(s.school.logo_resize), s.school.logo %>
+          <%= image_tag(s.school.logo_resize ,alt: "logo") %>
         </div>
         <div> <%= s.school.name%>  <br>
           <%= s.school.address%></div>
@@ -16,7 +16,11 @@
           </div>
           <div id="" class="card-middle">
             <div class="imgdiv">
-              <%=  image_tag( "default.jpg" ,class:"card-img") %>
+              <%if s.photo.present?%>
+                <%=  image_tag( s.photo ,alt: "image" ,class:"card-img") %>
+              <% else %>
+                <%=  image_tag( "default.jpg" ,class:"card-img") %>
+              <% end %>
             </div>
             <div id= "" class= "student-data">
               <h1>Name:<%= s.name%></h1>
