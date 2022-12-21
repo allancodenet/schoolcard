@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Student card generator that I built out of my personal needs. It  allows you to import students  from csv file , style cards and generate them for printing.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+# Tech Stack
+  * Built with Ruby on rails 7.0.4 and ruby  3.1.2
+  * Frontend built with Tailwind css
+  * Admin built with administrate gem
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+# Configuration
+* Add School details
+* Add Stream details
+* Add Substream details
+* Add Students
+* Add card settings
+* Add generate cards and print them
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
